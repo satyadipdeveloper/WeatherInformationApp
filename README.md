@@ -7,7 +7,7 @@ WeatherInformation Application has been developed in Swift 5, following MVVM des
 <img width="943" alt="Code-coverageAndAppStructure" src="https://user-images.githubusercontent.com/103358766/162612049-928dbacb-d20c-4171-a135-67cd37102bde.png">
  
 ## Supported version
-- iOS 15 onwards  
+- iOS 15 onwards  (Portrait mode only)
 
 ## Requirements
  Xcode 13+ , iOS Simulator/ iPhone Device (iOS 15 onwards) 
@@ -38,4 +38,4 @@ $ git clone https://github.com/satyadipios/WeatherInformation.git
   
 
 ## Notes 
-WeatherInformation application is tested in iPhone simulator (iOS 15.2) portrait mode only and not tested in real device. 
+WeatherInformation application is tested in iPhone simulator (iOS 15.2) and not tested in real device. 
