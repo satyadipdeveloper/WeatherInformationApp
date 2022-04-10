@@ -18,7 +18,7 @@ WeatherInformation Application has been developed in Swift 5, following MVVM des
 $ git clone https://github.com/satyadipios/WeatherInformation.git
 
 2) Open Project files (main branch)
-3) Open **WeatherInformation.xcworkspace** in Xcode and run in iOS 15+ devices (iPhone device/ Simulator) ( Install pods if there is any error to run the application otherwise there is no need to install pods)
+3) Open **WeatherInformation.xcworkspace** in Xcode and run in iOS 15+ devices (iPhone device/ Simulator) . Installation of Podfile is not required unless it gives any error to run. 
 
 ## Key Swift Features  
 * Test-driven development 
