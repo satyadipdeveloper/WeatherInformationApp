@@ -2,19 +2,22 @@
 //  SettingsViewModel.swift
 //  WeatherInformation
 //
-//  Created by Satyadip Singha on 3/4/21.
-//  Copyright © 2021 Satyadip Singha. All rights reserved.
+//  Created by Satyadip Singha on 08/04/22.
+//  Copyright © 2022 Satyadip Singha. All rights reserved.
 //
 
 import Foundation
+
+// Mark:- set case values as per API request parameter demands
 
 enum Unit: String, CaseIterable {
     case celsius = "metric"
     case fahrenheit = "imperial"
 }
 
+// Mark:- To Display unit on apploication screen
+
 extension Unit {
-    
     var displayName: String {
         get {
             switch(self) {
@@ -25,27 +28,19 @@ extension Unit {
             }
         }
     }
-    
 }
 
 class SettingsViewModel {
     
     let units = Unit.allCases
     
+    // get and Set unit values
+    
     var selectedUnit: Unit {
         get {
             let userDefaults = UserDefaults.standard
-            var unitValue = ""
-            if let value = userDefaults.value(forKey: "unit") as? String {
-                unitValue = value
-            }
-            if unitValue == "" {
-                return Unit.fahrenheit
-            }
-            else
-            {
-                return Unit(rawValue: unitValue)!
-            }
+            let value = userDefaults.value(forKey: "unit") as? String ?? ""
+            return value.isEmpty == true ? Unit.fahrenheit: Unit(rawValue: value) ?? Unit.fahrenheit
         }
         set {
             let userDefault = UserDefaults.standard

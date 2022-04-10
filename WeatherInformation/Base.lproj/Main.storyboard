@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HC9-cB-AtE">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +31,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="XWw-hD-4l5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZQW-BD-H7c">
+                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="settings_done" systemItem="done" id="ZQW-BD-H7c">
                             <connections>
                                 <action selector="done" destination="Yak-4S-h8G" id="3VC-45-JCv"/>
                             </connections>
@@ -43,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="1938.4000000000001" y="-595.05247376311854"/>
         </scene>
-        <!--WeatherInformation-->
+        <!--Weather Information-->
         <scene sceneID="dM2-cz-RoM">
             <objects>
                 <tableViewController id="KZq-aj-zGK" customClass="WeatherListTableViewController" customModule="WeatherInformation" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,6 +75,7 @@
                                         <constraint firstItem="mhU-IC-X1G" firstAttribute="leading" secondItem="L2x-61-xua" secondAttribute="leading" constant="16" id="B6O-gU-R2d"/>
                                         <constraint firstItem="mhU-IC-X1G" firstAttribute="top" secondItem="L2x-61-xua" secondAttribute="top" constant="39" id="Wwc-KH-Cha"/>
                                         <constraint firstAttribute="trailing" secondItem="raH-BU-Mch" secondAttribute="trailing" constant="16" id="feU-3v-cPC"/>
+                                        <constraint firstItem="raH-BU-Mch" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mhU-IC-X1G" secondAttribute="trailing" constant="8" symbolic="YES" id="k6P-Jf-X4U"/>
                                         <constraint firstItem="raH-BU-Mch" firstAttribute="top" secondItem="L2x-61-xua" secondAttribute="top" constant="30" id="oHP-ix-9Gv"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -90,8 +90,8 @@
                             <outlet property="delegate" destination="KZq-aj-zGK" id="8qt-Uj-CBh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="WeatherInformation" id="Rhx-7r-V2Y">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="TTJ-04-3El">
+                    <navigationItem key="navigationItem" title="Weather Information" id="Rhx-7r-V2Y">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" image="gear" largeContentSizeImage="Settings" id="TTJ-04-3El">
                             <connections>
                                 <segue destination="AkF-Gc-iDY" kind="presentation" identifier="SettingsTableViewController" id="bng-ts-DXa"/>
                             </connections>
@@ -105,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rji-Ck-rTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986.39999999999998" y="83.208395802098963"/>
+            <point key="canvasLocation" x="-166" y="82"/>
         </scene>
         <!--Add City-->
         <scene sceneID="ga5-Tf-5Bc">
@@ -115,13 +115,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjG-lE-e9n">
-                                <rect key="frame" x="16" y="87" width="343" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjG-lE-e9n">
+                                <rect key="frame" x="20" y="116" width="335" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="cityTextField"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="1ss-OE-mmn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kr1-L8-Lo9" id="I4Y-73-3l5"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMu-S8-x1H">
-                                <rect key="frame" x="170" y="133" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMu-S8-x1H">
+                                <rect key="frame" x="170.5" y="180" width="34" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="save"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="cSC-nO-V0H"/>
+                                    <constraint firstAttribute="height" constant="30" id="iYb-op-CI8"/>
+                                </constraints>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveCityButtonPressed" destination="kr1-L8-Lo9" eventType="touchUpInside" id="JDN-kN-5hh"/>
@@ -131,16 +143,15 @@
                         <viewLayoutGuide key="safeArea" id="Ail-Gy-wp0"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dMu-S8-x1H" firstAttribute="top" secondItem="tjG-lE-e9n" secondAttribute="bottom" constant="8" symbolic="YES" id="4v4-Jl-hTZ"/>
-                            <constraint firstItem="tjG-lE-e9n" firstAttribute="top" secondItem="Ail-Gy-wp0" secondAttribute="top" constant="31" id="6jI-yc-O2t"/>
-                            <constraint firstItem="tjG-lE-e9n" firstAttribute="trailing" secondItem="71B-g3-dPm" secondAttribute="trailingMargin" id="Bs3-xL-P9S"/>
-                            <constraint firstItem="tjG-lE-e9n" firstAttribute="leading" secondItem="71B-g3-dPm" secondAttribute="leadingMargin" id="dte-Lm-PK6"/>
-                            <constraint firstItem="dMu-S8-x1H" firstAttribute="leading" secondItem="Ail-Gy-wp0" secondAttribute="leading" constant="170" id="sXv-Nx-WIp"/>
-                            <constraint firstItem="tjG-lE-e9n" firstAttribute="centerX" secondItem="dMu-S8-x1H" secondAttribute="centerX" id="zFB-yu-hCn"/>
+                            <constraint firstItem="dMu-S8-x1H" firstAttribute="top" secondItem="tjG-lE-e9n" secondAttribute="bottom" constant="30" id="USw-fM-8yW"/>
+                            <constraint firstItem="tjG-lE-e9n" firstAttribute="leading" secondItem="Ail-Gy-wp0" secondAttribute="leading" constant="20" id="evK-NH-TkM"/>
+                            <constraint firstItem="tjG-lE-e9n" firstAttribute="top" secondItem="Ail-Gy-wp0" secondAttribute="top" constant="60" id="m6u-CZ-T9t"/>
+                            <constraint firstItem="Ail-Gy-wp0" firstAttribute="trailing" secondItem="tjG-lE-e9n" secondAttribute="trailing" constant="20" id="o1P-DB-3zp"/>
+                            <constraint firstItem="dMu-S8-x1H" firstAttribute="centerX" secondItem="71B-g3-dPm" secondAttribute="centerX" id="qcw-w3-wmu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add City" id="DT5-DG-USJ">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="6RV-uw-6ZX">
+                        <barButtonItem key="leftBarButtonItem" title="Close" largeContentSizeImage="Close" id="6RV-uw-6ZX">
                             <connections>
                                 <action selector="close" destination="kr1-L8-Lo9" id="xHc-Ku-ktC"/>
                             </connections>
@@ -170,7 +181,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdq-nh-Zwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.200000000000003" y="83.208395802098963"/>
+            <point key="canvasLocation" x="-1159" y="83"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ntO-rH-uU7">
@@ -209,4 +220,10 @@
             <point key="canvasLocation" x="999.20000000000005" y="-595.05247376311854"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Close" width="128" height="128"/>
+        <image name="Settings" width="128" height="128"/>
+        <image name="gear" width="32" height="32"/>
+        <image name="settings_done" width="128" height="128"/>
+    </resources>
 </document>

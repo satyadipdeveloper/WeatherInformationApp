@@ -2,8 +2,8 @@
 //  WeatherListViewModel.swift
 //  WeatherInformation
 //
-//  Created by Satyadip Singha on 3/4/21.
-//  Copyright © 2021 Satyadip Singha. All rights reserved.
+//  Created by Satyadip Singha on 08/04/22.
+//  Copyright © 2022 Satyadip Singha. All rights reserved.
 //
 
 import Foundation
@@ -24,6 +24,8 @@ class WeatherListViewModel {
         return weatherViewModels[index]
     }
     
+    //MARK:- Convert Fahrenheit to Celsius
+    
     private func toCelsius() {
         
         weatherViewModels = weatherViewModels.map { vm in
@@ -33,6 +35,7 @@ class WeatherListViewModel {
         }
         
     }
+    //MARK:- Convert Celsius to Fahrenheit
     
     private func toFahrenheit() {
         

@@ -2,8 +2,8 @@
 //  SettingsTableViewController.swift
 //  WeatherInformation
 //
-//  Created by Satyadip Singha on 3/4/21.
-//  Copyright © 2021 Satyadip Singha. All rights reserved.
+//  Created by Satyadip Singha on 08/04/22.
+//  Copyright © 2022 Satyadip Singha. All rights reserved.
 //
 
 import Foundation
@@ -16,6 +16,7 @@ protocol SettingsDelegate {
 class SettingsTableViewController: UITableViewController {
     
     private var settingsViewModel = SettingsViewModel()
+    let cellReuseIdentifier = "SettingsCell"
     var delegate: SettingsDelegate?
     
     override func viewDidLoad() {
@@ -23,13 +24,16 @@ class SettingsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    //Mark:- Update view model and dismiss view
+    
     @IBAction func done() {
         if let delegate = self.delegate {
             delegate.settingsDone(vm: settingsViewModel)
         }
-        
         self.dismiss(animated: true, completion: nil)
     }
+    
+    //Mark:- Tableview datasources and Delegates 
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -37,11 +41,9 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // uncheck all cells
         tableView.visibleCells.forEach { cell in
             cell.accessoryType = .none
         }
-        
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
             let unit = Unit.allCases[indexPath.row]
@@ -63,14 +65,11 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let settingsItem = settingsViewModel.units[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         cell.textLabel?.text = settingsItem.displayName
-        
         if settingsItem == settingsViewModel.selectedUnit {
             cell.accessoryType = .checkmark
         }
-        
         return cell
         
     }

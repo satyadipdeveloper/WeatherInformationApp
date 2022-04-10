@@ -2,7 +2,7 @@
 //  WeatherListViewModelTest.swift
 //  WeatherInformationTests
 //
-//  Created by Satyadip Singha on 06/04/22.
+//  Created by Satyadip Singha on 08/04/22.
 //  Copyright © 2022 Satyadip Singha. All rights reserved.
 //
 
@@ -17,24 +17,29 @@ class WeatherListViewModelTest: XCTestCase {
     override func setUp() {
         super.setUp()
         self.weatherListVM = WeatherListViewModel()
+        self.setMockForWeatherListViewModel()
     }
     
-    func test_should_be_able_to_convert_to_celsius_successfully() {
-        let celsiusTemperatures = [0,22.2222]
-        self.weatherListVM.updateUnit(to: .celsius)
-        
-        for (index, vm) in self.weatherListVM.weatherViewModels.enumerated() {
-            XCTAssertEqual(round(vm.temperature), round(celsiusTemperatures[index]))
-        }
+    func setMockForWeatherListViewModel() {
+        let weatherVM = WeatherViewModel(weather: WeatherResponse(name: "Kerala", main: Weather(temp: 40, humidity: 10)))
+        self.weatherListVM.addWeatherViewModel(weatherVM)
     }
     
-    func test_should_be_able_to_convert_to_fahrenheit_successfully() {
-        let farenheitTemperatures = [0,-40.0000]
-        self.weatherListVM.updateUnit(to: .fahrenheit)
-        
-        for (index, vm) in self.weatherListVM.weatherViewModels.enumerated() {
-            XCTAssertEqual(round(vm.temperature), round(farenheitTemperatures[index]))
-        }
+    func testToCelcius() {
+        XCTAssertEqual(self.weatherListVM.numberOfRows(0), 1)
+        XCTAssertNotNil(self.weatherListVM.modelAt(0))
+        self.weatherListVM.updateUnit(to: Unit.celsius)
+        let weatherModelcelsius = self.weatherListVM.modelAt(0)
+        XCTAssertEqual(weatherModelcelsius.temperature, 4.444444444444445)
     }
     
+    func testToFahrenheit() {
+        self.weatherListVM.updateUnit(to: Unit.fahrenheit)
+        let weatherModel = self.weatherListVM.modelAt(0)
+        XCTAssertEqual(weatherModel.temperature, 104.0)
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
 }

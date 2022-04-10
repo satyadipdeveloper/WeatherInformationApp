@@ -2,8 +2,8 @@
 //  WeatherCell.swift
 //  WeatherInformation
 //
-//  Created by Satyadip Singha on 12/1/18.
-//  Copyright © 2018 Satyadip Singha. All rights reserved.
+//  Created by Satyadip Singha on 08/04/22.
+//  Copyright © 2022 Satyadip Singha. All rights reserved.
 //
 
 import Foundation
@@ -14,8 +14,10 @@ class WeatherCell: UITableViewCell {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    //MARK:- Updating weather cell 
+    
     func configure(_ vm: WeatherViewModel) {
         self.cityNameLabel.text = vm.city
-        self.temperatureLabel.text = "\(vm.temperature.formatAsDegree())"
+        self.temperatureLabel.text = vm.temperature.formatTemperature()
     }
 }
