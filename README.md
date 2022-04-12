@@ -10,24 +10,24 @@ WeatherInformation Application has been developed in Swift 5, following MVVM des
 
 This the screen from where user can navigate to settings page and also move to next screen to Add City 
 
-![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 08 40 24](https://user-images.githubusercontent.com/103365162/162875774-1f0482f8-c741-4463-8d9d-aa25216391ee.png)
+![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 08 40 24](https://user-images.githubusercontent.com/103365162/162876664-6f5c214a-4ce5-47de-8f7b-58035959db08.png)
 
  User is Adding city to check current weather
 
-![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 09 04 00](https://user-images.githubusercontent.com/103365162/162875879-f8f4698a-ad9f-4ebd-9727-64087704afb6.png)
+![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 09 04 00](https://user-images.githubusercontent.com/103365162/162876726-664fcb8f-b5e2-4e8d-a9de-de46153600d5.png)
 
 Showing temperature in Fahrenheit 
  
- ![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 09 06 22](https://user-images.githubusercontent.com/103365162/162876035-309f7a2e-8591-4107-9c03-807c81e1a325.png)
+![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 09 06 22](https://user-images.githubusercontent.com/103365162/162876772-1d58d0c8-38b5-463d-a693-5abb74380f01.png)
 
  User can change unit from this screen 
  
 ![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 08 40 53](https://user-images.githubusercontent.com/103365162/162876512-ffe55bc8-011c-46b5-b49c-727aab6db443.png)
 
- 
  Showing temperature in Celcius
  
- ![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 09 04 36](https://user-images.githubusercontent.com/103365162/162876149-041e0450-6e50-4d30-b9c0-9215bfe16b75.png)
+![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 09 04 36](https://user-images.githubusercontent.com/103365162/162876811-f33c4669-5d5f-473e-9b98-1fc0d78d315c.png)
+
 
 ## Supported version
 - iOS 15 onwards  (Portrait mode only)
