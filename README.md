@@ -1,6 +1,6 @@
 # WeatherInformation
 
-**WeatherInformation** is a simple iPhone application which allows user to input city as per choice and App will display current temperature of that city. By default app will display temperature in Fahrenheit and user can also chagne temperature unit (Celcius and Fahrenheit) from settings screen. App will display temperature based on user selection. Used **OpenWeatherMap** API to get current weather information. 
+**Weather Information** is a simple iPhone application which allows user to input city as per choice and App will display current temperature of that city. By default app will display temperature in Fahrenheit and user can also chagne temperature unit (Celcius and Fahrenheit) from settings screen. App will display temperature based on user selection. Used **OpenWeatherMap** API to get current weather information. 
 
 WeatherInformation Application has been developed in Swift 5, following MVVM design pattern and Test-driven development approach. Code coverage is more than 90% in entire Application. Below screenshots shows Application structure and testcase results. 
 
@@ -61,4 +61,4 @@ $ git clone https://github.com/satyadipios/WeatherInformation.git
   
 
 ## Notes 
-WeatherInformation application is tested in iPhone simulator (iOS 15.2) and not tested in real device. 
+**Weather Information** application is tested in iPhone simulator (iOS 15.2) and not tested in real device. 
