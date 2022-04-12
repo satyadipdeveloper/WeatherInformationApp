@@ -22,7 +22,8 @@ Showing temperature in Fahrenheit
 
  User can change unit from this screen 
  
- ![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 08 40 53](https://user-images.githubusercontent.com/103365162/162876086-b968e584-fa74-4c6f-bdc4-ebabe75feccd.png)
+![Simulator Screen Shot - iPhone 13 Pro - 2022-04-12 at 08 40 53](https://user-images.githubusercontent.com/103365162/162876512-ffe55bc8-011c-46b5-b49c-727aab6db443.png)
+
  
  Showing temperature in Celcius
  
